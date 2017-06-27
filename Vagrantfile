@@ -17,15 +17,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.customize ['modifyvm', :id, '--memory', '1024']
   end
 
-  # If you are using Windows o Linux with an encrypted volume
+  ## If you are using Windows o Linux with an encrypted volume
   config.vm.synced_folder '.', '/vagrant', type: 'virtualbox'
 
-  # If you're using OS X or Linux (not encrypted)
-  # NFS ---- NFS improves speed of VM if supported by your OS
+  ## If you're using OS X or Linux (not encrypted)
+  ## NFS improves speed of VM if supported by your OS
   # config.vm.network 'private_network', ip: '192.168.50.4'
   # config.vm.synced_folder '.', '/vagrant', type: 'nfs'
 
-  # Provision application
-  # config.vm.provision "shell", privileged: false, run: "always",
-  #   path: "bin/setup_box.sh"
+  # Provision box
+  config.vm.provision "shell", privileged: false, run: "always",
+    path: "provision/box_setup.sh"
 end
