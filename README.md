@@ -4,10 +4,8 @@
 Configuration files to automatically set up a basic and customizable Vagrant box
 with the required tools to develop serverless projects.
 
-**Note**:
-
-* Currently, the provision scripts only install development tools used for AWS
-  Lambda, but it can be customized with your own provision script.
+**Note**: Currently, the provision scripts only install development tools used
+for AWS Lambda, but it can be customized with your own provision script.
 
 
 ## Usage
@@ -28,6 +26,8 @@ with the required tools to develop serverless projects.
 If you use a provider other than _Virtualbox_, be sure to change the
 configuration on the `Vagrantfile`.
 
+If you experience notice that delays on the synchronization of shared folders,
+a better option is to use [SSHF][9] or [NFS][10].
 
 ## Included Software
 
@@ -64,3 +64,5 @@ configuration on the `Vagrantfile`.
 [6]: https://serverless.com/framework/docs/providers/aws/guide/quick-start/
 [7]: https://www.vagrantup.com/
 [8]: https://www.virtualbox.org/wiki/Downloads
+[9]: https://fedoramagazine.org/vagrant-sharing-folders-vagrant-sshfs/
+[10]: https://www.vagrantup.com/docs/synced-folders/nfs.html
